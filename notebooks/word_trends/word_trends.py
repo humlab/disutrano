@@ -90,16 +90,12 @@ from bokeh.plotting import output_notebook
 from IPython.display import display
 from penelope.notebook.word_trends import main_gui
 
-__paths__.data_folder = "/data/inidun"
-__paths__.resources_folder = "/data/inidun/resources"
-
 output_notebook()
 
 gui = main_gui.ComplexTrendsGUI(
     corpus_folder=__paths__.corpus_folder,
     data_folder=__paths__.data_folder,
     resources_folder=__paths__.resources_folder,
-)
-display(gui)
+).setup()
 
-# %%
+display(gui.layout())

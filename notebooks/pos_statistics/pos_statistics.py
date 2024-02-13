@@ -41,8 +41,7 @@ from penelope.notebook.token_counts import pipeline_gui as tc_gui
 
 output_notebook()
 
-resources_folder = "/data/inidun/resources"
-config_filenames: str = pp.CorpusConfig.list_all(resources_folder, recursive=True, try_load=True)
+config_filenames: str = pp.CorpusConfig.list_all(__paths__.resources_folder, recursive=True, try_load=True)
 
 gui = tc_gui.TokenCountsGUI().setup(config_filenames).display()
 

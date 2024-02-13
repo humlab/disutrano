@@ -33,9 +33,6 @@ from penelope.utility import pandas_utils
 bokeh.plotting.output_notebook(hide_banner=True)
 pandas_utils.set_default_options()
 
-__paths__.data_folder = "/data/disutrano"
-__paths__.resources_folder = f"{__paths__.data_folder}/resources"
-
 corpus_folder: str = __paths__.data_folder
 
 current_state: Callable[[], ntm.TopicModelContainer] = ntm.TopicModelContainer.singleton
