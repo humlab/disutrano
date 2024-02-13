@@ -1,0 +1,56 @@
+[MASTER]
+; init-hook='import sys, os; sys.path.append((lambda d: os.path.join(os.getcwd().split(d)[0], d))("welfare_state_analytics"))'
+jobs=0
+ignore=.ipynb_checkpoints,.git,data,test_data,deprecated,.pytest_cache,__pycache__,bin
+
+[MESSAGES CONTROL]
+
+disable=broad-except,
+        c-extension-no-member,
+        consider-using-dict-items,
+        consider-using-enumerate,
+        consider-using-f-string,
+        consider-using-from-import,
+        duplicate-code,
+        global-statement,
+        invalid-name,
+        line-too-long,
+        logging-format-interpolation,
+        logging-fstring-interpolation,
+        missing-class-docstring,
+        missing-function-docstring,
+        missing-module-docstring,
+        pointless-string-statement,
+        too-few-public-methods,
+        too-many-ancestors,
+        unnecessary-comprehension,
+        unnecessary-lambda-assignment,
+        unspecified-encoding,
+        unused-private-member,
+        use-dict-literal,
+        wrong-import-order
+
+[REPORTS]
+score=no
+
+[SPELLING]
+max-spelling-suggestions=4
+
+[VARIABLES]
+#callbacks=cb_,
+#          _cb
+
+[DESIGN]
+
+max-args=8
+
+[MISCELLANEOUS]
+
+notes=
+#notes=FIXME, XXX, TODO
+
+[EXCEPTIONS]
+
+overgeneral-exceptions=builtins.BaseException
+    #, Exception
+

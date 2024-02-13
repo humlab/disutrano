@@ -1,0 +1,23 @@
+{
+    "include": [
+        "notebooks",
+        "scripts",
+        "tests"
+    ],
+    "exclude": [
+        "**/deprecated",
+        "**/.ipynb_checkpoints",
+        "**/__pycache__",
+        "**/.pytest_cache",
+        "**/__init__.py",
+        "**/__paths__.py"
+    ],
+    // "reportMissingImports": true,
+    // "reportMissingTypeStubs": false,
+    // "reportUntypedFunctionDecorator": false,
+    // "reportUntypedClassDecorator": true,
+    // "reportOptionalSubscript": false,
+    // "reportOptionalMemberAccess": false,
+    // "reportOptionalCall": false,
+    // "pythonVersion": "3.9"
+}
