@@ -7,7 +7,7 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.14.6
+#       jupytext_version: 1.16.1
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
@@ -20,26 +20,27 @@
 
 # %%
 
+import __paths__  # pylint: disable=unused-import
 from typing import Callable
 
-import __paths__  # pylint: disable=unused-import
 import bokeh.plotting
 import penelope.notebook.topic_modelling as ntm
 from IPython.display import display
 from penelope.utility import pandas_utils
 
-from notebooks.source.courier import overload_state_on_loaded_handler
+# from notebooks.source.courier import overload_state_on_loaded_handler
 
 bokeh.plotting.output_notebook(hide_banner=True)
 pandas_utils.set_default_options()
 
-__paths__.data_folder = "/data/inidun"
+__paths__.data_folder = "/data/disutrano"
 __paths__.resources_folder = f"{__paths__.data_folder}/resources"
 
 corpus_folder: str = __paths__.data_folder
 
 current_state: Callable[[], ntm.TopicModelContainer] = ntm.TopicModelContainer.singleton
-current_state().register(None, callback=overload_state_on_loaded_handler)
+
+# current_state().register(None, callback=overload_state_on_loaded_handler)
 
 
 # %% [markdown]

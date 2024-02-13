@@ -2,7 +2,7 @@ import sys
 
 from penelope.utility.paths import find_data_folder, find_resources_folder, find_root_folder
 
-project_name: str = 'welfare_state_analytics'
+project_name: str = 'disutrano'
 project_short_name: str = "disutrano"
 
 corpus_folder: str = find_data_folder(project_name=project_name, project_short_name=project_short_name)

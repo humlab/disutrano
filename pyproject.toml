@@ -1,9 +1,21 @@
 [tool.poetry]
-name = "discourses-of-sustainable-transformation"
+name = "humlab-disutrano"
 version = "0.1.0"
 description = "Media discourses of a sustainable Norrland: journalism, places, and practices in transformation."
 authors = ["roger-mahler <roger.mahler@hotmail.com>"]
 readme = "README.md"
+packages = [{ include = "notebooks" }]
+classifiers = [
+    'License :: OSI Approved :: Apache Software License',
+    'Operating System :: OS Independent',
+    'Topic :: Software Development',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.11',
+]
+license = "Apache-2.0"
+homepage = "https://github.com/humlab/humlab-disutrano/"
+repository = "https://github.com/humlab/humlab-disutrano/"
 
 [tool.poetry.dependencies]
 python = "==3.11.*"
@@ -30,6 +42,40 @@ isort = "^5.13.2"
 pylint = "^3.0.3"
 pytest = "^8.0.0"
 jupytext = "^1.16.1"
+
+[tool.black]
+line-length = 120
+target-version = ["py39"]
+skip-string-normalization = true
+exclude = '''
+(
+  \.git
+  | \.pypy_cache
+  | \.pytest_cache
+  | \.ipynb_checkpoints
+  | deprecated
+)
+'''
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [ "-rafE", "-q" ]
+log_cli = "False"
+testpaths = ["tests"]
+norecursedirs = [ 'notebooks', '.git', 'data', 'output', 'deprecated', '__pycache__', 'tmp' ]
+python_files = "*_test.py"
+python_functions = "test_*"
+filterwarnings = [ "ignore::_pytest.warning_types.PytestCollectionWarning", "ignore::DeprecationWarning" ]
+
+[tool.isort]
+# https://github.com/timothycrosley/isort/wiki/isort-Settings
+profile = "black"
+line_length = 120
+py_version = "auto"
+float_to_top = true
+src_paths = ["notebooks", "tests", "scripts"]
+extra_standard_library = ["__paths__"]
 
 [build-system]
 requires = ["poetry-core"]

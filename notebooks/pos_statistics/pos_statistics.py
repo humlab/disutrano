@@ -33,6 +33,7 @@
 # %%
 
 import __paths__  # pylint: disable=unused-import
+
 from bokeh.io import output_notebook
 from IPython.display import display
 from penelope import pipeline as pp

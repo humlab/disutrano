@@ -25,6 +25,7 @@
 # %autoreload 2
 
 import __paths__
+
 from IPython.display import display
 from penelope.notebook.mdw import create_main_gui
 

@@ -85,6 +85,7 @@
 #
 # %%
 import __paths__  # pylint: disable=unused-import
+
 from bokeh.plotting import output_notebook
 from IPython.display import display
 from penelope.notebook.word_trends import main_gui
