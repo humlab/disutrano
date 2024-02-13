@@ -1,8 +1,7 @@
 import os
 import sys
 
-from penelope.utility.paths import (find_data_folder, find_resources_folder,
-                                    find_root_folder)
+from penelope.utility.paths import find_data_folder, find_resources_folder, find_root_folder
 
 project_name: str = os.environ.get('PROJECT_NAME', '')
 project_short_name: str = project_name
