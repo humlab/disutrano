@@ -75,11 +75,11 @@ dependencies:
   render_text:
     class_name: penelope.corpus.render.RenderService
     options:
-      template: /data/disutrano/resources/article_corpus.jinja
+      template: /data/disutrano/resources/article.jinja
       links_registry:
-        PDF: '<a href="https://demo.humlab.umu.se/courier/{{courier_id}}.pdf" target="_blank" style="font-weight: bold;color: blue;">PDF</a>'
-        MD: '<a href=""https://raw.githubusercontent.com/inidun/courier_article_corpus/main/article_corpus/{{filename}}" target="_blank" style="font-weight: bold;color: blue;">TEXT</a>'
+        URL: '<a href="{{ url }}" target="_blank" style="font-weight: bold;color: blue;">URL</a>'
   text_loader:
     class_name: penelope.corpus.render.ZippedTextCorpusLoader
     options:
-      source: /data/disutrano/corpus/article_corpus.zip
+      source: /data/disutrano/corpus/retriever.zip
+extra_opts:
