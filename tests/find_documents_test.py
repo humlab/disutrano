@@ -2,10 +2,33 @@ import pandas as pd
 from penelope.corpus import render as rt
 from penelope.notebook import topic_modelling as ntm
 
+from notebooks.source.state_on_load import assign_pivot_keys_on_load
+
+
+def test_update_state_on_load():
+
+    state: ntm.TopicModelContainer = ntm.TopicModelContainer()
+    state.load(folder='tests/test_data/test-corpus.gensim_mallet-lda', slim=True)
+
+    assert set(state.inferred_topics.document_index.columns).intersection({'media_id', 'source_id'}) == set()
+    assert isinstance(state.inferred_topics.corpus_config.pivot_keys_specs, str)
+
+    state: ntm.TopicModelContainer = ntm.TopicModelContainer()
+    state.register(None, callback=assign_pivot_keys_on_load)
+    state.load(folder='tests/test_data/test-corpus.gensim_mallet-lda', slim=True)
+
+    assert set(state.inferred_topics.document_index.columns).intersection({'media_id', 'source_id'}) == {
+        'media_id',
+        'source_id',
+    }
+    assert isinstance(state.inferred_topics.corpus_config.pivot_keys_specs, dict)
+
 
 def test_find_topic_documents():
 
     state: ntm.TopicModelContainer = ntm.TopicModelContainer()
+    state.register(None, callback=assign_pivot_keys_on_load)
+
     state.load(folder='tests/test_data/test-corpus.gensim_mallet-lda', slim=True)
     text_repository: rt.ITextRepository = rt.TextRepository(
         source='tests/test_data/test-corpus.zip',
@@ -43,6 +66,3 @@ def test_find_topic_documents():
     assert len(data) == 1
     gui.update_handler()
     assert gui._alert.value == '✅'  # pylint: disable=protected-access
-
-    assert set(gui.pivot_keys.id_names) == {'media_id', 'source_id'}
-    assert set(gui.pivot_keys.text_names) == {'media', 'source'}
