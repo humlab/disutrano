@@ -28,7 +28,7 @@ import penelope.notebook.topic_modelling as ntm
 from IPython.display import display
 from penelope.utility import pandas_utils
 
-# from notebooks.source.courier import overload_state_on_loaded_handler
+from notebooks.source.state_on_load import assign_pivot_keys_on_load
 
 bokeh.plotting.output_notebook(hide_banner=True)
 pandas_utils.set_default_options()
@@ -37,8 +37,12 @@ corpus_folder: str = __paths__.data_folder
 
 current_state: Callable[[], ntm.TopicModelContainer] = ntm.TopicModelContainer.singleton
 
-# current_state().register(None, callback=overload_state_on_loaded_handler)
+current_state().register(None, callback=assign_pivot_keys_on_load)
 
+
+# %%
+current_state().inferred_topics.corpus_config.extra_opts
+current_state().inferred_topics.document_index
 
 # %% [markdown]
 # ### <span style='color: green'>PREPARE</span> Load Topic Model <span style='float: right; color: red'>MANDATORY</span>
