@@ -40,10 +40,6 @@ current_state: Callable[[], ntm.TopicModelContainer] = ntm.TopicModelContainer.s
 current_state().register(None, callback=assign_pivot_keys_on_load)
 
 
-# %%
-current_state().inferred_topics.corpus_config.extra_opts
-current_state().inferred_topics.document_index
-
 # %% [markdown]
 # ### <span style='color: green'>PREPARE</span> Load Topic Model <span style='float: right; color: red'>MANDATORY</span>
 
