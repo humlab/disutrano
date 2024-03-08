@@ -1,0 +1,345 @@
+pivot_keys:
+  media:
+    text_name: media
+    id_name: media_id
+    values:
+        webb: 0
+        print: 1
+  source:
+    text_name: source
+    id_name: source_id
+    values: 
+      Motala & Vadstena Tidning Premium: 0
+      Upsala Nya Tidning Premium: 1
+      Norra Skåne: 2
+      TTELA Plus: 3
+      Svenska Dagbladet Premium: 4
+      Helsingborgs Dagblad Premium: 5
+      Sydsvenskan Premium: 6
+      Göteborgs-Posten Plus: 7
+      Hallands Nyheter Plus: 8
+      Bohusläningen Plus: 9
+      Hallandsposten Plus: 10
+      Södra Dalarnes Tidning: 11
+      Nya Ludvika Tidning: 12
+      Norran: 13
+      Falu Kuriren: 14
+      Västerbottens-Kuriren: 15
+      Västerbottens-Kuriren Premium: 16
+      Avesta Tidning Premium: 17
+      Dalarnas Tidningar Premium (arkiv): 18
+      Piteå-Tidningen: 19
+      Norrbottens-Kuriren: 20
+      Norrländska Socialdemokraten: 21
+      Piteå-Tidningen Premium: 22
+      Norrländska Socialdemokraten Premium: 23
+      Norrbottens-Kuriren Premium: 24
+      Svenska Dagbladet: 25
+      Megafonen: 26
+      Sveriges Radio P1: 27
+      Örnsköldsviks Allehanda Premium: 28
+      Tidningen Ångermanland: 29
+      Norran (arkiv): 30
+      Folkbladet Västerbotten: 31
+      Folkbladet.nu Premium: 32
+      Sundsvalls Tidning Premium: 33
+      Sundsvalls Tidning: 34
+      Gefle Dagblad: 35
+      SVT Nyheter Norrbotten: 36
+      Gefle Dagblad Premium: 37
+      Västerbottningen - Premium: 38
+      Örnsköldsviks Allehanda: 39
+      News Øresund: 40
+      TV4: 41
+      Västerbottningen: 42
+      Dagens Nyheter: 43
+      Dagens Nyheter - Premium: 44
+      Helagotland Premium: 45
+      Gotlands Allehanda: 46
+      TTELA: 47
+      Blekinge Läns Tidning: 48
+      Expressen: 49
+      SVT Nyheter Västerbotten: 50
+      Omni: 51
+      Sveriges Radio Norrbotten: 52
+      Göteborgs-Posten: 53
+      GT: 54
+      Kvällsposten: 55
+      Ljusnan: 56
+      Di DIGITAL Plus: 57
+      Extra Boden: 58
+      Extra Luleå: 59
+      Lokaltidningen - Premium: 60
+      Lokaltidningen: 61
+      Nya Wermlands-Tidningen (arkiv): 62
+      Nya Wermlands-Tidningen: 63
+      Hudiksvalls Tidning: 64
+      Söderhamns-Kuriren: 65
+      Dala-Demokraten: 66
+      Dala-Demokraten Premium: 67
+      Sydsvenskan: 68
+      Vimmerby Tidning Premium: 69
+      Västerviks-Tidningen Premium: 70
+      Folkbladet Premium: 71
+      Katrineholms-Kuriren Premium: 72
+      Enköpings-Posten Premium: 73
+      Kristianstadsbladet: 74
+      Södermanlands Nyheter Premium: 75
+      Eskilstuna-Kuriren Premium: 76
+      Borås Tidning: 77
+      Skånska Dagbladet Plus: 78
+      Tranås Tidning: 79
+      Vetlanda-Posten: 80
+      Smålands Dagblad: 81
+      Smålands-Tidningen: 82
+      Folkbladet Östergötland: 83
+      Karlskoga Tidning -Kuriren: 84
+      Nordvästra Skånes Tidningar: 85
+      Landskrona Posten: 86
+      Helsingborgs Dagblad: 87
+      Sydöstran: 88
+      Skånska Dagbladet: 89
+      Västerviks-Tidningen: 90
+      Vimmerby Tidning: 91
+      Östgöta Correspondenten: 92
+      Enköpings-Posten: 93
+      Motala & Vadstena Tidning: 94
+      Ölandsbladet: 95
+      Norrköpings Tidningar: 96
+      Södermanlands Nyheter: 97
+      Katrineholms-Kuriren: 98
+      Vestmanlands Läns Tidning: 99
+      Länstidningen Södertälje: 100
+      Eskilstuna Kuriren: 101
+      Värnamo Nyheter: 102
+      Jönköpings-Posten: 103
+      Bohusläningen: 104
+      Upsala Nya Tidning: 105
+      Nerikes Allehanda: 106
+      Aftonbladet: 107
+      Barometern: 108
+      Ystads Allehanda: 109
+      Länstidningen Östersund Premium: 110
+      Dagen: 111
+      Hallandsposten: 112
+      Lidköpingsnytt: 113
+      Strömstads Tidning / Norra Bohuslän: 114
+      Trelleborgs Allehanda: 115
+      Aftonbladet Live Studio: 116
+      Strömstads Tidning Plus: 117
+      Oskarshamns-Tidningen: 118
+      Arbetarbladet Premium: 119
+      Arbetarbladet: 120
+      Hallands Nyheter: 121
+      Östersunds-Posten: 122
+      Länstidningen Östersund: 123
+      Västerbottens Mellanbygd: 124
+      Nordsverige: 125
+      Kinda-Posten Premium: 126
+      Nyheter24: 127
+      Ljusdals-Posten Premium: 128
+      Vestmanlands Läns Tidning Premium: 129
+      Norrköpings Tidningar Premium: 130
+      Östgöta Correspondenten Premium: 131
+      Söderhamns-Kuriren Premium: 132
+      Hudiksvalls Tidning Premium: 133
+      Strengnäs Tidning Premium: 134
+      Ljusnan Premium: 135
+      Norran Premium: 136
+      Tidningen Ångermanland Premium: 137
+      Nerikes Allehanda Premium: 138
+      Siljan News: 139
+      Sveriges Radio: 140
+      Sveriges Radio Västerbotten: 141
+      Nya Lidköpings-Tidningen Plus: 142
+      Örebronyheter: 143
+      Mariestads-Tidningen Plus: 144
+      Avesta Tidning: 145
+      Mora Tidning: 146
+      Mariestads-Tidningen: 147
+      Nya Ludvika Tidning Premium: 148
+      Södra Dalarnes Tidning Premium: 149
+      Falu-Kuriren Premium: 150
+      Borlänge Tidning Premium: 151
+      Mora Tidning Premium: 152
+      Borlänge Tidning: 153
+      Skaraborgs Allehanda: 154
+      Östersunds-Posten Premium: 155
+      ETC: 156
+      Västerbottens Mellanbygd - Premium: 157
+      Jämtlands Tidning: 158
+      SVT Nyheter Västernorrland: 159
+      Lysekilsposten: 160
+      Nyheter Idag: 161
+      Bärgslagsbladet/Arboga Tidning: 162
+      DagensETC: 163
+      Ulricehamns Tidning: 164
+      Fryksdalsbygden: 165
+      Mitt i Haninge: 166
+      Mitt i Sigtuna: 167
+      Lokaltidningen Mitt i: 168
+      Dagens Hultsfred: 169
+      Dagens Västervik: 170
+      Dagens Vimmerby: 171
+      Dagens Kalmar: 172
+      Borås Tidning Plus: 173
+      SVT Nyheter: 174
+      Smålandsposten: 175
+      Smålänningen: 176
+      Smålänningen Plus: 177
+      Haparandabladet: 178
+      Västgöta-Bladet: 179
+      Falköpings Tidning: 180
+      Skaraborgs Läns Tidning: 181
+      KT-Kuriren (arkiv): 182
+      Nordsverige - Premium: 183
+      Barometern Plus: 184
+      Tidningen Härjedalen: 185
+      Tidningen Härjedalen Premium: 186
+      Ljusdals-Posten: 187
+      Hela Hälsingland Premium (arkiv): 188
+      Expressen Premium: 189
+      Värmlands Folkblad (arkiv): 190
+      Värmlands Folkblad: 191
+      Gotlands Tidningar: 192
+      Arvika Nyheter: 193
+      Dina Pengar: 194
+      Nya Kristinehamns-Posten: 195
+      Säffle-Tidningen: 196
+      Skaraborgs Allehanda Plus: 197
+      Skaraborgsbygden (arkiv): 198
+      ETC Premium: 199
+      Sveriges Radio Jämtland: 200
+      Blekinge Läns Tidning Plus: 201
+      Info Express: 202
+      Lysekilsposten - Premium: 203
+      Skillingaryd: 204
+      Värnamo.nu: 205
+      Sydöstran Plus: 206
+      ETC Göteborg: 207
+      Fokus Premium: 208
+      Svenljunga & Tranemo Tidning: 209
+      Markbladet: 210
+      Nya Wermlands-Tidningen Plus: 211
+      Skaraborgs Allehanda (arkiv): 212
+      Länstidningen Södertälje Premium: 213
+      Ölandsbladet Plus: 214
+      Länstidningen Östergötland: 215
+      Smålands Dagblad Plus: 216
+      Vetlanda-Posten Plus: 217
+      Tranås Tidning Plus: 218
+      Smålands-Tidningen Plus: 219
+      Jnytt Plus (arkiv): 220
+      Jönköpings-Posten Plus: 221
+      Växjöbladet/Kronobergaren: 222
+      Mitt i Upplands Väsby: 223
+      Mitt i Tyresö: 224
+      ST-tidningen (arkiv): 225
+      ST-tidningen: 226
+      Frilagt: 227
+      Knallebladet: 228
+      Bblat Premium: 229
+      Skövde Nyheter: 230
+      Norrtelje Tidning: 231
+      Oskarshamns-Nytt: 232
+      Avesta Tidning (arkiv): 233
+      Allehanda.se (arkiv): 234
+      Länstidningen Södertälje (arkiv): 235
+      Folkbladet.nu Plus (arkiv): 236
+      Östra Småland: 237
+      Nyheterna Östra Småland: 238
+      Östra Småland (arkiv): 239
+      Sveriges Radio P4: 240
+      Uppsala Fria Tidning: 241
+      Östergötlands Näringsliv: 242
+      ETC Umeå: 243
+      Västerbottens-Kuriren Plus (arkiv): 244
+      Landets Fria: 245
+      Gefle Dagblad (arkiv): 246
+      ETC Sundsvall: 247
+      Sundsvalls Tidning (arkiv): 248
+      Höglandsnytt: 249
+      Hela Hälsingland (arkiv): 250
+      Östersunds-Posten (arkiv): 251
+      Arbetarbladet (arkiv): 252
+      Aftonkuriren: 253
+      Norrbottens-Kuriren (arkiv): 254
+      24 Nybro (arkiv): 255
+      Uppgång Premium (arkiv): 256
+      Västerviks-Posten: 257
+      Linköpings Tidning/Kinda-Posten: 258
+      Göteborgs-Posten (arkiv): 259
+      Länstidningen Östersund (arkiv): 260
+      TTELA (arkiv): 261
+      Norrtelje Tidning (arkiv): 262
+      Hallandsposten (arkiv): 263
+      Nerikes Allehanda (arkiv): 264
+      Vestmanlands Läns Tidning (arkiv): 265
+      Bohusläningen (arkiv): 266
+      Metro: 267
+      Norrländska Socialdemokraten (arkiv): 268
+      NKP Plus: 269
+      KT-Kuriren Plus: 270
+      Sydnärkenytt: 271
+      Norrtelje Tidning Premium: 272
+      Fagersta-Posten: 273
+      SVT Nyheter Jämtland: 274
+      Sveriges Radio Oddasat: 275
+      Sala Allehanda: 276
+      Värmlands Folkblad Plus: 277
+      Bjäre NU: 278
+      Laholms Tidning: 279
+      Provinstidningen Plus: 280
+      Telgenytt: 281
+      Provinstidningen Dalsland: 282
+      Tranås-Posten: 283
+      Lidkopingsextra: 284
+      Hjo Tidning: 285
+      SVT Nyheter Väst: 286
+      Sveriges Radio Kristianstad: 287
+      Sveriges Radio Malmö: 288
+      Sörmlandsbygden: 289
+      Mariestads-Tidningen (arkiv): 290
+      Ystads Allehanda Plus: 291
+      Kristianstadsbladet Plus: 292
+      Smålandsposten Plus: 293
+      SVD - Morgonrapporten Premium: 294
+      Dina Pengar Premium: 295
+      Sveriges Radio Halland: 296
+      Örebro Läns Tidning: 297
+      Värmlandsbygden: 298
+      Vimmerby Tidning (arkiv): 299
+      Affärslivgotland Premium: 300
+      Nya Lidköpings-Tidningen: 301
+      Sveriges Radio Gotland: 302
+      Hallands Nyheter (arkiv): 303
+      Strömstads Tidning (arkiv): 304
+      SVT Nyheter Gävleborg: 305
+      Alingsås Tidning: 306
+      Dala-Demokraten (arkiv): 307
+      Länsposten: 308
+      Vxonews: 309
+      Sveriges Radio Dalarna: 310
+      Norra Skåne Premium: 311
+      Skaraborgsbygden Plus: 312
+      Sveriges Radio Västernorrland: 313
+      Karlstads Tidningen: 314
+      Provinstidningen (arkiv): 315
+      Nerikes Allehanda Helg: 316
+      GöteborgDirekt: 317
+      GöteborgDirekt Hisingen: 318
+      GöteborgDirekt Angered - Östra Göteborg: 319
+      GöteborgDirekt Frölunda - Högsbo: 320
+      GöteborgDirekt Askim - Norra Halland: 321
+      GöteborgDirekt Centrum - Majorna/Linné: 322
+      Lokaltidningen Växjö: 323
+      Fryksdalsbygden (arkiv): 324
+      Hjo Tidning Plus: 325
+      Norra Halland: 326
+      Alingsås Tidning Plus: 327
+      SVT Nyheter Stockholm: 328
+      ST-tidningen Plus: 329
+      Uppsalatidningen: 330
+      NKP (arkiv): 331
+      Fagersta-Posten Premium: 332
+      SVT Nyheter Jönköping: 333

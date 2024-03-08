@@ -1,0 +1,86 @@
+corpus_name: test-config
+corpus_pattern: ".csv.zip"
+corpus_type: 3
+language: swedish
+checkpoint_opts:
+  content_type_code: 1
+  sep: "\t"
+  quoting: 3
+  document_index_name: null
+  document_index_sep: ";"
+  text_column: &text_column token
+  lemma_column: &lemma_column lemma
+  pos_column: &pos_column pos
+  deserialize_processes: 2
+  deserialize_chunksize: 2
+  index_column: null
+pipelines:
+  tagged_frame_pipeline:
+    class_name: penelope_stanza.pipelines.load_tagged_frame_checkpoint_pipeline
+  topic_modeling_pipeline:
+    class_name: penelope.pipeline.topic_model.pipelines.from_tagged_frame_pipeline
+pipeline_payload:
+  source: tests/test_data/test-corpus.zip
+  document_index_source: document_index.csv
+  document_index_sep: ";"
+  filenames: null
+  pos_schema_name: SUC
+  memory_store:
+    lang: se
+    text_column: *text_column
+    lemma_column: *lemma_column
+    pos_column: *pos_column
+    word_frequencies: &word_frequencies tests/output/dehyphen/word-frequencies-small.pkl
+    tagger_opts:
+      root_folder: tests/output/work_folder
+      target_folder: tests/output/tagged_frames
+      tagger:
+          lang: sv
+          processors: "tokenize,lemma,pos"
+          tokenize_no_ssplit: true
+          tokenize_pretokenized: true
+          use_gpu: false
+          num_threads: 1
+          module: penelope_stanza.tagger
+          stanza_datadir: /data/sparv/models/stanza
+          preprocessors: "pretokenize"
+text_transform_opts:
+  preprocessors: "normalize-characters,replace-special-characters,dedent,swe-dehyphen,space-after-sentence"
+  swe-dehyphen:
+    name: penelope_stanza.common.dehyphenation.swe_dehyphen.SwedishDehyphenator.dehyphen_text
+    arguments:
+      data_folder: tests/output/dehyphen
+      word_frequencies: *word_frequencies
+text_reader_opts:
+  as_binary: false
+  filename_filter: null
+  filename_pattern: "*.txt"
+  index_field: null
+  sep: ";"
+  filename_fields:
+    - "dummy:_:0"
+dependencies:
+  text_repository:
+    class_name: penelope.corpus.render.TextRepository
+    options:
+      source: config@text_loader
+      document_index: local@document_index
+      transforms: normalize-whitespace
+    dependencies:
+      document_index:
+        class_name: penelope.corpus.document_index.load_document_index
+        options:
+          filename: tests/test_data/document_index.csv
+          sep: ;
+  render_text:
+    class_name: penelope.corpus.render.RenderService
+    options:
+      template: tests/test_data/article.jinja
+      links_registry:
+        SOURCE: '<a href="{{url}}" target="_blank" style="font-weight: bold;color: blue;">PDF</a>'
+  text_loader:
+    class_name: penelope.corpus.render.ZippedTextCorpusLoader
+    options:
+      source: tests/test_data/test-corpus.zip
+extra_opts:
+  pivot_keys: tests/test_data/pivot-keys.yml

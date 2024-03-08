@@ -1,0 +1,8 @@
+{
+    "tf_type": "linear",
+    "apply_idf": false,
+    "idf_type": "smooth",
+    "norm": "l2",
+    "min_df": 1,
+    "max_df": 0.95
+}

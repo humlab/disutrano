@@ -1,0 +1,104 @@
+corpus_name: test-config
+corpus_type: 3
+corpus_pattern: .csv.zip
+corpus_version: null
+serialize_opts:
+  content_type_code: 1
+  document_index_name: null
+  document_index_sep: ;
+  sep: "\t"
+  quoting: 3
+  custom_serializer_classname: null
+  deserialize_processes: 2
+  deserialize_chunksize: 2
+  text_column: token
+  lemma_column: lemma
+  pos_column: pos
+  extra_columns: []
+  frequency_column: null
+  index_column: null
+  feather_folder: null
+  lower_lemma: true
+text_reader_opts:
+  filename_pattern: '*.txt'
+  filename_filter: null
+  filename_fields:
+  - dummy:_:0
+  index_field: null
+  as_binary: false
+  sep: ;
+  quoting: 3
+  n_processes: 1
+  n_chunksize: 2
+  dehyphen_expr: "\\b(\\w+)[-\xAC]\\s*\\r?\\n\\s*(\\w+)\\s*\\b"
+text_transform_opts: normalize-characters,replace-special-characters,dedent,swe-dehyphen,space-after-sentence
+pipeline_payload:
+  source: tests/test_data/test-corpus.zip
+  document_index_source: document_index.csv
+  document_index_sep: ;
+  filenames: null
+  pos_schema_name: SUC
+  memory_store:
+    lang: se
+    text_column: token
+    lemma_column: lemma
+    pos_column: pos
+    word_frequencies: tests/output/dehyphen/word-frequencies-small.pkl
+    tagger_opts:
+      root_folder: tests/output/work_folder
+      target_folder: tests/output/tagged_frames
+      tagger:
+        lang: sv
+        processors: tokenize,lemma,pos
+        tokenize_no_ssplit: true
+        tokenize_pretokenized: true
+        use_gpu: false
+        num_threads: 1
+        module: penelope_stanza.tagger
+        stanza_datadir: /data/sparv/models/stanza
+        preprocessors: pretokenize
+    extract_opts: null
+    transform_opts: null
+    topic_modeling_opts:
+      alpha: asymmetric
+      chunk_size: 2000
+      max_iter: 3500
+      num_top_words: 500
+      minimum_probability: 0.02
+      n_topics: 5
+      per_word_topics: false
+      random_seed: 42
+      update_every: 1
+      work_folder: tests/output/test-corpus.gensim_mallet-lda
+      workers: 1
+pipelines:
+  tagged_frame_pipeline:
+    class_name: penelope_stanza.pipelines.load_tagged_frame_checkpoint_pipeline
+  topic_modeling_pipeline:
+    class_name: penelope.pipeline.topic_model.pipelines.from_tagged_frame_pipeline
+language: swedish
+extra_opts:
+  pivot_keys: tests/test_data/pivot-keys.yml
+dependencies:
+  text_repository:
+    class_name: penelope.corpus.render.TextRepository
+    options:
+      source: config@text_loader
+      document_index: local@document_index
+      transforms: normalize-whitespace
+    dependencies:
+      document_index:
+        class_name: penelope.corpus.document_index.load_document_index
+        options:
+          filename: tests/test_data/document_index.csv
+          sep: ;
+  render_text:
+    class_name: penelope.corpus.render.RenderService
+    options:
+      template: tests/test_data/article.jinja
+      links_registry:
+        WEB: '<a href="{{url}}" target="_blank" style="font-weight: bold;color: blue;">PDF</a>'
+  text_loader:
+    class_name: penelope.corpus.render.ZippedTextCorpusLoader
+    options:
+      source: tests/test_data/test-corpus.zip
