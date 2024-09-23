@@ -39,13 +39,22 @@ current_state: Callable[[], ntm.TopicModelContainer] = ntm.TopicModelContainer.s
 
 current_state().register(None, callback=assign_pivot_keys_on_load)
 
-
 # %% [markdown]
 # ### <span style='color: green'>PREPARE</span> Load Topic Model <span style='float: right; color: red'>MANDATORY</span>
 
 # %%
 load_gui: ntm.LoadGUI = ntm.LoadGUI(data_folder=corpus_folder, state=current_state()).setup()
 display(load_gui.layout())
+# %% [markdown]
+# ### <span style='color: green'>PREPARE </span> Edit Topic Labels<span style='float: right; color: red'></span>
+# Please rerun this cell after loading a new model.
+
+# %%
+
+edit_ux: ntm.EditTopicLabelsGUI = ntm.EditTopicLabelsGUI(
+    folder=load_gui.model_info.folder, state=current_state()
+).setup()
+display(edit_ux.layout())
 
 # %% [markdown]
 # ### <span style='color: green;'>BROWSE</span> Find topics by token<span style='color: red; float: right'>TRY IT</span>
@@ -53,9 +62,9 @@ display(load_gui.layout())
 # Displays topics in which given token is among toplist of dominant words.
 
 # %%
-fd_ui = ntm.WithPivotKeysText.FindTopicDocumentsGUI(
+fd_ui: ntm.WithPivotKeysText.FindTopicDocumentsGUI = ntm.WithPivotKeysText.FindTopicDocumentsGUI(
     current_state(), vertical=True, year_span=(1990, 1992), width='160px'
-).setup()
+).setup()  # type: ignore
 display(fd_ui.layout())
 
 # %% [markdown]
