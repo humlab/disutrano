@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "humlab-disutrano"
-version = "0.1.5"
+version = "0.1.6"
 description = "Media discourses of a sustainable Norrland: journalism, places, and practices in transformation."
 authors = ["roger-mahler <roger.mahler@hotmail.com>"]
 readme = "README.md"
