@@ -36,7 +36,7 @@ pyarrow = "^15.0.0"
 wordcloud = "^1.9.3"
 scikit-learn = "^1.4.1.post1"
 networkx = "^3.2.1"
-humlab-penelope = {extras = ["full"], path = "../penelope", develop = true}
+humlab-penelope = {extras = ["full"], version = "^0.8.1"}
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.2.0"
