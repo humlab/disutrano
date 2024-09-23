@@ -36,7 +36,7 @@ pyarrow = "^15.0.0"
 wordcloud = "^1.9.3"
 scikit-learn = "^1.4.1.post1"
 networkx = "^3.2.1"
-humlab-penelope = {extras = ["full"], version = "^0.7.67"}
+humlab-penelope = {extras = ["full"], path = "../penelope", develop = true}
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.2.0"
@@ -45,6 +45,36 @@ isort = "^5.13.2"
 pylint = "^3.0.3"
 pytest = "^8.0.0"
 jupytext = "^1.16.1"
+
+
+[tool.pyright]
+include = ["pyriksprot", "tests"]
+exclude = [
+    ".git",
+    ".vscode",
+    "**/__init__.py",
+    "**/__pycache__",
+    "tmp",
+    "data",
+    "tests/test_data",
+    "tests/output",
+]
+reportMissingTypeStubs = false
+reportUntypedFunctionDecorator = false
+reportUntypedClassDecorator = true
+reportOptionalSubscript = false
+reportOptionalMemberAccess = false
+reportOptionalCall = false
+reportOptionalIterable = false
+reportAssignmentType = false
+reportArgumentType = false
+reportMissingImports = true
+reportUnusedVariable = true
+reportUnusedImport = true
+reportUndefinedVariable = true
+reportUnboundVariable = true
+reportAttributeAccessIssue = false
+pythonVersion = "3.11"
 
 [tool.black]
 line-length = 120
