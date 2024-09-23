@@ -1,9 +1,7 @@
-import shutil
-
 import pandas as pd
 from penelope import topic_modelling as ntm
 
-INPUT_FOLDER: str = f'data/tmp/20240409_140-TF2-MP0.02-5000000-lower-no-stopwords-lemma.gensim_mallet-lda-text'
+INPUT_FOLDER: str = 'data/tmp/20240409_140-TF2-MP0.02-5000000-lower-no-stopwords-lemma.gensim_mallet-lda-text'
 OUTPUT_FOLDER: str = 'data/tmp/CLUSTER_20240409_140-TF2-MP0.02-5000000-lower-no-stopwords-lemma.gensim_mallet-lda-text'
 
 
@@ -105,8 +103,8 @@ def test_using_simple_fake_data():
             [4, 4, 0.2],
         ],
     )
-    token2id: dict[int, str] = dictionary['token'].to_dict()
-    topic_token_overview = ntm.compute_topic_token_overview(topic_token_weights, token2id, 3)
+    token2id: dict[int, str] = dictionary['token'].to_dict()  # pylint: disable=unsubscriptable-object
+    topic_token_overview: pd.DataFrame = ntm.compute_topic_token_overview(topic_token_weights, token2id, 3)
     topic_token_overview['label'] = ['T1', 'T2', 'T3', 'T4', 'T5']
     inferred_topics: ntm.InferredTopicsData = ntm.InferredTopicsData(
         document_index=document_index,
